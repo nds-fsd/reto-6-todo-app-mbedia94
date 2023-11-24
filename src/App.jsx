@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { TaskList } from "./components/TaskList/TaskList";
 import { Form } from "./components/Form/Form";
 import { getTodos } from "./logic/api";
+import styles from "./App.module.css";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -17,9 +18,9 @@ function App() {
   };
 
   return (
-    <div>
-      <Form update={update} setUpdate={setUpdate} />
-      <button onClick={handleListVisible}>
+    <div className={styles.root}>
+      <Form update={update} setUpdate={setUpdate} className={styles.root}/>
+      <button onClick={handleListVisible} className={styles.button}>
         {listVisible ? "Ocultar lista" : "Mostrar lista"}
       </button>
       {listVisible && (
