@@ -1,0 +1,27 @@
+* {
+  font-family: "Roboto", sans-serif;
+  color: #1c3738;
+}
+
+.root {
+  height: 100vh;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: #f4fff8;
+}
+
+.button {
+  appearance: unset;
+  background-color: #1c3738;
+  font-size: medium;
+  color: #ffffff;
+  padding: 5px 20px;
+  border-style: none;
+  border-radius: 15px;
+}
+
+.button:hover {
+  background-color: #000f08;
+}
