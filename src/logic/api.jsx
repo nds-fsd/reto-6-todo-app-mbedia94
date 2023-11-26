@@ -1,13 +1,19 @@
-const API_URL = "http://localhost:3000/todo";
+const API_URL = "http://localhost:3000";
+const PATH = "todo";
 
-export const getTodos = async () => {
-  const response = await fetch(API_URL);
+export const getTodo = async (id) => {
+  let url = `${API_URL}/${PATH}`;
+  if (id) {
+    url = `${url}/${id}`;
+  }
+  const response = await fetch(url);
   const data = await response.json();
   return data;
 };
 
 export const addTodo = async (data) => {
-  const response = await fetch(API_URL, {
+  let url = `${API_URL}/${PATH}`;
+  const response = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -18,8 +24,12 @@ export const addTodo = async (data) => {
   return todo;
 };
 
-export const updateDoneTodo = async (id, done) => {
-  const response = await fetch(`${API_URL}/${id}`, {
+export const updateTodo = async (id, done) => {
+  let url = `${API_URL}/${PATH}`;
+  if (id) {
+    url = `${url}/${id}`;
+  }
+  const response = await fetch(url, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -31,9 +41,12 @@ export const updateDoneTodo = async (id, done) => {
 };
 
 export const deleteTodo = async (id) => {
-  const response = await fetch(`${API_URL}/${id}`, {
+  let url = `${API_URL}/${PATH}`;
+  if (id) {
+    url = `${url}/${id}`;
+  }
+  const response = await fetch(url, {
     method: "DELETE",
   });
-  const data = await response.json();
-  return data;
+  return;
 };

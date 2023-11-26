@@ -1,0 +1,12 @@
+.list {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+h2 {
+  color: #1c3738;
+}
